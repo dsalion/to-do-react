@@ -1,11 +1,20 @@
 import './Form.scss';
 
+
 export const Form = () => {
+let createText = ''
+
+const formSubmit = () => {console.log(createText)};
+
+const changeText = (event: React.ChangeEvent<HTMLInputElement>) => {
+  createText = event.target.value
+}
+
   return (
     <div className="form-wrapper">
-      <form action="#">
+      <form action="#" onSubmit={formSubmit}>
         <label>
-          <input type="text" />
+          <input type="text" onInput={changeText}/>
           <button></button>
         </label>
       </form>
